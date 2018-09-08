@@ -1,0 +1,212 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta lang="en" />
+    <meta charset="utf-8" />
+    <title>Portfolio</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .splash_container {
+            width: 100%;
+            height: 100%;
+            background-color: #5e92f3;
+            text-align: center;
+        }
+
+        .splash_container .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .splash_container .title h1 {
+            margin-bottom: 0;
+        }
+
+        .splash_container .title h4 {
+            color: #62efff;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .splash_container .title img {
+            width: 200px;
+            height: 200px;
+            border: solid 3px white;
+            border-radius: 10% 20% 50% 50%;
+            -webkit-box-shadow: 10px 10px 19px -3px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 19px -3px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 19px -3px rgba(0,0,0,0.75);
+        }
+
+        .splash_container .links {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            border-radius: 0 0 0 4px;
+            color: white;
+        }
+
+        .splash_container .links ul {
+            display: block;
+            padding: 0;
+            margin: 0;
+        }
+
+        .splash_container .links ul li {
+            display: inline;
+            font-size: 22px;
+            padding: 0px 5px;
+        }
+
+        .splash_container .links ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .grid-container {
+            background-color: coral;
+        }
+
+        .grid-item {
+            display: block;
+            padding: 20px;
+            text-align: center;
+        }
+
+        div {
+            clear: both;
+        }
+
+        img {
+            width: 480px;
+            height: auto;
+            margin: 30px 20px;
+            border: 2px double black;
+            border-radius: 20% 30%;
+            border-style: groove solid double;
+            -webkit-box-shadow: 10px 10px 19px -3px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 19px -3px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 19px -3px rgba(0,0,0,0.75);
+        }
+
+        section {
+          height: 100vh;
+          width: 100%;
+          display: table;
+
+        }
+      
+        .scroll-down {
+          opacity: 1;
+          -webkit-transition: all .5s ease-in 3s;
+          transition: all .5s ease-in 3s;
+        }
+        
+        .scroll-down {
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          margin-left: -16px;
+          display: block;
+          width: 32px;
+          height: 32px;
+          border: 2px solid #FFF;
+          background-size: 14px auto;
+          border-radius: 50%;
+          z-index: 2;
+          -webkit-animation: bounce 2s infinite 2s;
+          animation: bounce 2s infinite 2s;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+        }
+
+        .scroll-down:before {
+            position: absolute;
+            top: calc(50% - 8px);
+            left: calc(50% - 6px);
+            transform: rotate(-45deg);
+            display: block;
+            width: 12px;
+            height: 12px;
+            content: "";
+            border: 2px solid white;
+            border-width: 0px 0 2px 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="splash_container">
+    <div class="title">
+        <img src="~/images/myAvatar1.png" />
+        <h1>Madhu Dutta</h1>
+        <h4>FULL TIME NERD</h4>
+    </div>
+    <div class="links">
+        <ul>
+        <li>
+            <a href="http://facebook.com">
+            <i class="fab fa-facebook-square"></i>
+            </a>
+        </li>
+        <li>
+            <a href="http://instagram.com">
+            <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li>
+            <a href="http://linkedin.com">
+            <i class="fab fa-linkedin"></i>
+            </a>
+        </li>
+        <li>
+            <a href="http://github.com">
+            <i class="fab fa-github"></i>
+            </a>
+        </li>
+        </ul>
+    </div>
+        <section>
+            <a href="#" class="scroll-down" address="true"></a>
+        </section>
+        <section class="ok">
+        </section>                                              
+    </div>
+    <div class="grid-container">
+
+    <div class="grid-item">
+        <img src="~/images/image1.jpg" />
+        <img src="~/images/image2.jpg" />
+    </div>
+    <div class="grid-item">
+        <img src="~/images/image3.jpg" />
+        <img src="~/images/image4.jpg" />
+    </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function () {
+        $('.scroll-down').click(function () {
+            $('html, body').animate({ scrollTop: $('section.ok').offset().top }, 'slow');
+            return false;
+        });
+    });
+    </script>
+</body>
+</html>
